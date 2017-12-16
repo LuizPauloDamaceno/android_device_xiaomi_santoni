@@ -187,6 +187,75 @@ ro.config.zram=true
 # Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
 ro.config.swap=true
 
-# 8224 Freak
+### 8224 Freak tweaks
+
+# Decrease dialing out delay
+ro.telephony.call_ring.delay=0
+
+# High wakelock with low signal data connection?
+ro.ril.wake_lock_timeout=2000
+
+# Fix some application issues
+#ro.kernel.android.checkjni=0
+
+## JIT Android 7
+#dalvik.vm.usejit=true
+#dalvik.vm.usejitprofiles=true
+
+# enable HD audio for headphones and other audio tweaks for RR
+audio.offload.disable=false
+audio.offload.buffer.size.kb=1024
+persist.audio.FFSP.enable=true
+audio.nat.codec.enabled=true
+persist.audio.hifi.int_codec=true
+persist.audio.dirac.speaker=false
+use.dts_eagle=true
+
+#camera on RR ROM make sure you disable Color Denoise setting.
+#persist.camera.liveshot.size=1920x1080
+#persist.camera.HAL3.enabled=1
+#persist.camera.hal3hfr.enable=1
+#persist.camera.ltmforseemore=1
+# persist.camera.led.on.period=500
+#persist.camera.stats.af.paaf=1
+#persist.camera.manual.capture=1
+# high temp? then lower fps (or frameskip)
+#persist.camera.thermal.mode=fps
+#persist.camera.opt.livepic=1
+# Chromatic Aberation enabled? Check logcat grep -i chroma
+# E mm-camera: <IMGLIB><ERROR> 695: module_cac_handle_aec_update: module_cac_handle_aec_update 695: Invalid chromatix ptr
+#persist.camera.feature.cac=1
+#persist.camera.eis.enable=1
+#persist.denoise.process.plates=2
+##persist.camera.longshot.stages=1
+##persist.camera.facedetect=1
+#persist.camera.snapshot.fd=1
+# face detect in video 0 1 2(only for focus)
+#persist.camera.fdvideo=1
+#persist.camera.mem.usepool=1
+#persist.camera.mem.usecache=5000000
 persist.sys.exif.make=Xiaomi
 persist.sys.exif.model=Redmi 4x RR Luis-Build
+#persist.camera.feature.shutter=1
+#persist.camera.auto.hdr.enable=1
+#persist.camera.tintless=1
+#persist.camera.continuous.iso=200
+#persist.camera.exposure.time=
+## dual camera range finding
+#persist.camera.dcrf.enable=0
+#persist.camera.multi_pass=1
+#persist.camera.zsl.mode=1
+#persist.camera.zsl.interval=1
+#persist.camera.zsl.backlookcnt=2
+#persist.camera.zsl.queuedepth=2
+# zigzag hdr
+#persist.camera.zzhdr.enable=1
+#persist.camera.zzhdr.video=1
+#persist.camera.eztune.enable=0
+# TemporalDenoise (Supported at all?)
+#persist.camera.tnr_cds=1
+#persist.camera.tnr.snapshot=1
+#persist.camera.tnr.video=1
+#persist.camera.tnr.preview=1
+# low light noise enabled?
+#persist.camera.llnoise=1
