@@ -186,3 +186,7 @@ ro.config.zram=true
 
 # Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
 ro.config.swap=true
+
+# 8224 Freak
+persist.sys.exif.make=Xiaomi
+persist.sys.exif.model=Redmi 4x RR Luis-Build
