@@ -213,7 +213,7 @@ use.dts_eagle=true
 
 #camera on RR ROM make sure you disable Color Denoise setting.
 #persist.camera.liveshot.size=1920x1080
-#persist.camera.HAL3.enabled=1
+persist.camera.HAL3.enabled=1
 #persist.camera.hal3hfr.enable=1
 #persist.camera.ltmforseemore=1
 # persist.camera.led.on.period=500
