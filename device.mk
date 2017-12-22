@@ -119,7 +119,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_camera \
     OnePlusGallery_Luis \
-    GoogleCamera_Luis \
+    GoogleCamera44_Luis \
     Snap
 
 # Display
