@@ -177,7 +177,7 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Fingerprint
-        # Goodix Fingerprint
+    # Goodix Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp        
     
@@ -216,10 +216,10 @@ on boot
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
 
-    # IR blaster
-    chown root system /sys/class/leds/infrared/transmit
-    chown root system /sys/class/leds/infrared/brightness  
-
+    # IR Blaster
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+    
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
     chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
