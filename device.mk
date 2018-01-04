@@ -119,7 +119,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_camera \
     OnePlusGallery_Luis \
-    Camera_5.1.016.174405463 \
+    GoogleCamera_Luis \
     Snap
 
 # Display
