@@ -205,6 +205,10 @@ ro.ril.wake_lock_timeout=2000
 #dalvik.vm.usejit=true
 #dalvik.vm.usejitprofiles=true
 
+# Fix Cast/Miracast
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+
 # enable HD audio for headphones and other audio tweaks for RR
 audio.offload.disable=false
 audio.offload.buffer.size.kb=1024
