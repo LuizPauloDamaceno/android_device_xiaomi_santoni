@@ -119,6 +119,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_camera \
     OnePlusGallery_Luis \
+	MIUICamera_Luis \
     GoogleCamera_Luis_santoni \
     Snap
 
