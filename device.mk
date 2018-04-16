@@ -118,9 +118,9 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     libshim_camera \
-    OnePlusGallery_Luis \
-	MIUICamera_Luis \
-    GoogleCamera_Luis_santoni \
+    OnePlusGallery_OP3 \
+    GoogleCamera_R4X \
+	MIUICamera \
     Snap
 
 # Display
