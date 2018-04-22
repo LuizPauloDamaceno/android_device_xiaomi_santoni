@@ -119,7 +119,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_camera \
     OnePlusGallery_OP3 \
-    GoogleCamera_R4X \
 	MIUICamera \
     Snap
 
