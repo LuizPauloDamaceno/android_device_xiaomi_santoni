@@ -141,7 +141,6 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     mm-qcamera-app \
     OnePlusGallery_OP3 \
-    GoogleCamera_R4X \
 	MIUICamera \
     Snap
 
