@@ -379,4 +379,7 @@
         <item>com.google.android.gms</item>
     </string-array>
 	
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+	
 </resources>
