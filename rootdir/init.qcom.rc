@@ -731,28 +731,6 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# FST Manager with hostapd (softap) - all settings inside ini file
-service fstman /system/bin/fstman -B -ddd -c /data/misc/wifi/fstman.ini
-    user wifi
-    group wifi net_admin net_raw
-    class main
-    disabled
-    oneshot
-
-# FST Manager with supplicant - connect to supplicant socket
-service fstman_wlan0 /system/bin/fstman -B -ddd -c /data/misc/wifi/fstman.ini @android:wpa_wlan0
-    user wifi
-    group wifi net_admin net_raw
-    class main
-    disabled
-    oneshot
-
-on property:netd.fstman.start=true
-    start fstman
-
-on property:netd.fstman.start=false
-    stop fstman
-
 service ptt_socket_app /system/bin/ptt_socket_app -d
     class main
     user root
@@ -1037,7 +1015,7 @@ service time_daemon /system/vendor/bin/time_daemon
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service gx_fpd /system/bin/gx_fpd
+service gx_fpd /system/vendor/bin/gx_fpd
      class core
      user root
      group system system
