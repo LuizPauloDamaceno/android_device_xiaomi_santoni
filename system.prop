@@ -83,6 +83,9 @@ ro.qualcomm.cabl=0
 ro.sf.lcd_density=320
 sys.display-size=3840x2160
 
+# Fix Cast/Miracast
+persist.sys.wfd.virtual=0
+
 # DRM
 drm.service.enabled=true
 
