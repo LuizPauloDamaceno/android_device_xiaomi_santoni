@@ -1577,18 +1577,18 @@ case "$target" in
                 echo 40000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/sampling_down_factor
                 echo 768000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
-                # Disable L2-GDHS low power modes
-                echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled
-                echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled
-                echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled
-                echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled
+                # Enable L2-GDHS low power modes
+                echo Y > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled
+                echo Y > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled
+                echo Y > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled
+                echo Y > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled
 
-                # Disable E3 low power modes
+                # Enable E3 low power modes
                 echo N > /sys/module/lpm_levels/system/system-pc/idle_enabled
 
-                # Disable CCI WFI and CCI RETENTION Low power modes
-                echo N > /sys/module/lpm_levels/system/system-wfi/idle_enabled
-                echo N > /sys/module/lpm_levels/system/system-ret/idle_enabled
+                # Enable CCI WFI and CCI RETENTION Low power modes
+                echo Y > /sys/module/lpm_levels/system/system-wfi/idle_enabled
+                echo Y > /sys/module/lpm_levels/system/system-ret/idle_enabled
 
                 # Bring up all cores online
                 echo 1 > /sys/devices/system/cpu/cpu1/online
@@ -1598,11 +1598,11 @@ case "$target" in
                 echo 1 > /sys/devices/system/cpu/cpu5/online
                 echo 1 > /sys/devices/system/cpu/cpu6/online
                 echo 1 > /sys/devices/system/cpu/cpu7/online
-                # Disable L2-GDHS low power modes
-                echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled
-                echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled
-                echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled
-                echo N > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled
+                # Enable L2-GDHS low power modes
+                echo Y > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled
+                echo Y > /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled
+                echo Y > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled
+                echo Y > /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled
 
                 # Enable low power modes
                 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
@@ -2394,3 +2394,25 @@ case "$console_config" in
         echo "Enable console config to $console_config"
         ;;
 esac
+
+#High performance amplification
+echo 1 > /sys/module/snd_soc_wcd9330/parameters/high_perf_mode
+echo 1 > /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en
+echo 1 > /sys/module/snd_soc_wcd_mbhc/parameters/det_extn_cable_en
+
+#Faster charging on USB
+echo 0 > /sys/class/power_supply/battery/restricted_charging
+
+### Save some power on cpu's? Rescheduled on a core that is already awake
+chmod 644 /sys/module/workqueue/parameters/power_efficient
+echo Y > /sys/module/workqueue/parameters/power_efficient
+chmod 444 /sys/module/workqueue/parameters/power_efficient
+
+#Qualcomm BIG/LITTLE related
+echo 19 > /proc/sys/kernel/sched_upmigrate_min_nice
+echo "0-7" > /dev/cpuset/cpus
+echo "0-7" > /dev/cpuset/foreground/cpus
+echo "0-3" > /dev/cpuset/foreground/boost/cpus
+echo "4-5" > /dev/cpuset/background/cpus
+echo "4-7" > /dev/cpuset/system-background/cpus
+echo "0-7" > /dev/cpuset/top-app/cpus

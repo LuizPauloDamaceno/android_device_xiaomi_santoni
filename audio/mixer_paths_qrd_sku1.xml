@@ -49,22 +49,22 @@
     <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="TTY Mode" value="Off" />
-    <ctl name="HPHL Volume" value="9" />
-    <ctl name="HPHR Volume" value="9" />
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
+    <ctl name="HPHL Volume" value="6" />
+    <ctl name="HPHR Volume" value="6" />
+    <ctl name="RX1 Digital Volume" value="86" />
+    <ctl name="RX2 Digital Volume" value="86" />
     <ctl name="RX3 Digital Volume" value="86" />
     <ctl name="IIR1 INP1 Volume" value="84" />
     <ctl name="IIR1 INP2 Volume" value="84" />
     <ctl name="IIR1 INP3 Volume" value="84" />
     <ctl name="IIR1 INP4 Volume" value="84" />
     <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
-    <ctl name="ADC1 Volume" value="4" />
-    <ctl name="ADC2 Volume" value="4" />
-    <ctl name="ADC3 Volume" value="4" />
+    <ctl name="ADC1 Volume" value="5" />
+    <ctl name="ADC2 Volume" value="5" />
+    <ctl name="ADC3 Volume" value="5" />
     <!-- +bug 196716,zhangjianming.wt,MODIFY,20160111,other can not reciving sound  -->
-    <ctl name="DEC1 Volume" value="84" />
-    <ctl name="DEC2 Volume" value="84" />
+    <ctl name="DEC1 Volume" value="87" />
+    <ctl name="DEC2 Volume" value="87" />
     <ctl name="DEC2 MUX" value="ZERO" />
     <ctl name="DEC1 MUX" value="ZERO" />
     <ctl name="ADC2 MUX" value="ZERO" />
@@ -100,6 +100,7 @@
     <ctl name="PRI_MI2S_RX_VI_FB_MUX" value="ZERO" />
     <ctl name="DEC3 MUX" value="ZERO" />
     <ctl name="DEC4 MUX" value="ZERO" />
+    <ctl name="Boost Option" value="BOOST_ALWAYS" />
     <ctl name="SpkrMono VISENSE Switch" value="0" />
 
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="0" />
@@ -486,8 +487,11 @@
     </path>
 
     <path name="voice-call">
-	<ctl name="DEC1 Volume" value="84" />
- 	<ctl name="DEC2 Volume" value="84" />
+	<ctl name="DEC1 Volume" value="90" />
+ 	<ctl name="DEC2 Volume" value="90" />
+	<ctl name="DEC1 HPF cut off" value="MIN_3DB_75Hz" />
+    	<ctl name="DEC2 HPF cut off" value="MIN_3DB_75Hz" />
+	<ctl name="RX1 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="PRI_MI2S_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer TERT_MI2S_TX_Voice" value="1" />
     </path>
@@ -866,7 +870,42 @@
 
     <path name="speaker">
         <ctl name="MI2S_RX Channels" value="One" />
-        <ctl name="RX2 MIX1 INP1" value="RX2" />
+	<ctl name="IIR2 Band1" id="0" value="268435456" />
+        <ctl name="IIR2 Band1" id="1" value="540433120" />
+        <ctl name="IIR2 Band1" id="2" value="264944647" />
+        <ctl name="IIR2 Band1" id="3" value="540433120" />
+        <ctl name="IIR2 Band1" id="4" value="264944647" />
+        <ctl name="IIR2 Band2" id="0" value="266436358" />
+        <ctl name="IIR2 Band2" id="1" value="547986522" />
+        <ctl name="IIR2 Band2" id="2" value="259600589" />
+        <ctl name="IIR2 Band2" id="3" value="547986522" />
+        <ctl name="IIR2 Band2" id="4" value="257601492" />
+        <ctl name="IIR2 Band3" id="0" value="264320679" />
+        <ctl name="IIR2 Band3" id="1" value="559438821" />
+        <ctl name="IIR2 Band3" id="2" value="251085847" />
+        <ctl name="IIR2 Band3" id="3" value="559438821" />
+        <ctl name="IIR2 Band3" id="4" value="246971071" />
+        <ctl name="IIR2 Band4" id="0" value="259639175" />
+        <ctl name="IIR2 Band4" id="1" value="664575684" />
+        <ctl name="IIR2 Band4" id="2" value="183239062" />
+        <ctl name="IIR2 Band4" id="3" value="664575684" />
+        <ctl name="IIR2 Band4" id="4" value="174442781" />
+        <ctl name="IIR2 Band5" id="0" value="280651279" />
+        <ctl name="IIR2 Band5" id="1" value="763359731" />
+        <ctl name="IIR2 Band5" id="2" value="153917918" />
+        <ctl name="IIR2 Band5" id="3" value="784195692" />
+        <ctl name="IIR2 Band5" id="4" value="145297780" />
+    	<ctl name="IIR2 Enable Band1" value="1" />
+    	<ctl name="IIR2 Enable Band2" value="1" />
+    	<ctl name="IIR2 Enable Band3" value="1" />
+    	<ctl name="IIR2 Enable Band4" value="1" />
+    	<ctl name="IIR2 Enable Band5" value="1" />
+	<ctl name="RX2 HPF cut off" value="MIN_3DB_4Hz" />
+        <ctl name="IIR2 INP1 MUX" value="RX2" />
+	<ctl name="RX2 MIX1 INP1" value="RX2" />
+	<ctl name="RX2 MIX2 INP1" value="IIR2" />
+	<ctl name="IIR2 INP1 Volume" value="86" />
+	<ctl name="RX2 Digital Volume" value="86" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHR" value="Switch" />
         <ctl name="Lineout_1 amp" value="ENABLE"/>
@@ -907,6 +946,7 @@
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
+	<ctl name="RX1 HPF cut off" value="MIN_3DB_75Hz" />
         <ctl name="RX1 Digital Volume" value="86" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
@@ -914,13 +954,19 @@
 
     <path name="handset-mic">
         <path name="adc1" />
-	<ctl name="DEC1 Volume" value="86" />
-	<ctl name="DEC2 Volume" value="86" />
+	<ctl name="DEC1 Volume" value="88" />
+	<ctl name="DEC2 Volume" value="88" />
+	<ctl name="DEC1 HPF cut off" value="MIN_3DB_4Hz" />
+    	<ctl name="DEC2 HPF cut off" value="MIN_3DB_4Hz" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
     <path name="headphones">
         <ctl name="MI2S_RX Channels" value="Two" />
+	<ctl name="RX1 HPF cut off" value="MIN_3DB_4Hz" />
+	<ctl name="RX2 HPF cut off" value="MIN_3DB_4Hz" />
+	<ctl name="RX1 Digital Volume" value="88" />
+	<ctl name="RX1 Digital Volume" value="88" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
@@ -931,6 +977,9 @@
 
     <path name="headset-mic">
         <path name="adc2" />
+	<ctl name="ADC2 Volume" value="8" />
+	<ctl name="DEC1 Volume" value="92" />
+	<ctl name="DEC1 HPF cut off" value="MIN_3DB_75Hz" />
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
@@ -945,7 +994,7 @@
 
     <path name="sidetone-handset">
         <path name="sidetone-iir" />
-        <ctl name="IIR1 INP1 Volume" value="53" />
+        <ctl name="IIR1 INP1 Volume" value="52" />
         <ctl name="RX1 MIX2 INP1" value="IIR1" />
     </path>
 
@@ -953,7 +1002,7 @@
         <path name="sidetone-iir" />
         <ctl name="RX1 MIX2 INP1" value="IIR1" />
         <ctl name="RX2 MIX2 INP1" value="IIR1" />
-        <ctl name="IIR1 INP1 Volume" value="53" />
+        <ctl name="IIR1 INP1 Volume" value="52" />
     </path>
 
     <path name="voice-handset">

@@ -27,6 +27,8 @@
 <audio_platform_info>
     <bit_width_configs>
         <device name="SND_DEVICE_OUT_SPEAKER" bit_width="24"/>
+	<device name="SND_DEVICE_OUT_HEADPHONES" bit_width="24"/>
+	<device name="SND_DEVICE_OUT_HANDSET" bit_width="24"/>
     </bit_width_configs>
     <interface_names>
         <device name="AUDIO_DEVICE_IN_BUILTIN_MIC" interface="SLIMBUS_0" codec_type="external"/>
@@ -55,6 +57,7 @@
         <param key="perf_lock_opts" value="4, 0x101, 0x704, 0x20F, 0x1E01"/>
     </config_params>
     <acdb_ids>
+	<device name="SND_DEVICE_OUT_SPEAKER" acdb_id="564"/>
         <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" acdb_id="136"/>
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER_PROTECTED" acdb_id="136"/>
         <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED_VBAT" acdb_id="136"/>
